@@ -15,7 +15,7 @@ Assistting with back end: Andrew <br>
 
 
 **Free / Available time:** <br>
-Elian: <br>
+<ins>Elian:</ins> <br>
 Mon & Wed: 12pm - 12am <br>
 Tue & Thurs: common hrs and after 6pm <br> 
 Friday: all day <br>
