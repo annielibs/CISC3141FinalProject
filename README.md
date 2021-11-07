@@ -5,7 +5,7 @@ This project will be a diary app containing front end and back end features. The
 Project manager: Ann Liberman <br>
 Overseeing back end: Gilman <br>
 Overseeing front end: Elian <br>
-Assisting with front end: <br>
+Assisting with front end: Sean <br>
 Assistting with back end: Andrew <br>
 
 
