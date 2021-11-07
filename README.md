@@ -1,5 +1,5 @@
 # CISC3141FinalProject
-## This project will be a diary app containing front end and back end features. The diary app with head read, write, delete capabilites. 
+## This project will be a diary app containing front end and back end features. The diary app with have read, write, & delete capabilites. 
 
 **Project Roles:** <br>
 Project manager: Ann Liberman <br>
