@@ -11,7 +11,7 @@ Assistting with back end: Andrew <br>
 
 **To Do:** <br>
 [] Ann to reach out to everyone to set up some time to work on the project remotely. <br> 
-[] Ann to reach out to Andrew for his availabilities & github name <br> 
+[] Ann to reach out to Sean for his availabilities & github name <br> 
 [] Gilman will draw a diagram <br>
 [] Will look at some other diary apps for ideas, think of an outline, potentially use Figma <br>  
 
