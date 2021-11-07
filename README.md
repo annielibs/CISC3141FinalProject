@@ -6,7 +6,7 @@ Project manager: Ann Liberman <br>
 Overseeing back end: Gilman <br>
 Overseeing front end: Elian <br>
 Assisting with front end: <br>
-Assistting with back end: <br>
+Assistting with back end: Andrew <br>
 
 
 **To Do: ** <br>
@@ -36,7 +36,12 @@ Friday: 2pm - 6pm <br>
 Sunday: after class <br>
 
 Sean: --need availabilities-- <br>
-Andrew: --need availabilities-- <br>
+
+Andrew: 
+Mon & Wed: all day before 5pm <br>
+Tue & Thurs: between 12 and 5pm <br>
+Friday: all day <br>
+Sunday: after class <br>
 
 **Project Feature Needs: ** <br>
 - place to create account <br>
