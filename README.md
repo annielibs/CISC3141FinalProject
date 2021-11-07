@@ -47,6 +47,6 @@ Sunday: after class <br>
 - place to create account <br>
 - place to look at entries <br>
 - place to edit entires <br>
-- you have a user, user has a diary, and diary has multiple entries <br>
-- Entries: Date field, and text field, add images field <br>
-- Toggle between public and private entry <br>
+- have a user, user has a diary, and diary has multiple entries <br>
+- Entries: Date field, text field, and images field <br>
+- Toggle between public and private entries <br>
