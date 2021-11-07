@@ -1,0 +1,35 @@
+{
+  "users": [
+    { "user_id": 1, "name": "Jane Doe" },
+    { "user_id": 2, "name": "Alice Key" },
+    { "user_id": 3, "name": "Bob Belcher" }
+  ],
+  "diaries": [
+    { "diary_id": 1, "user_foreign_id": 1, "creation_date": "2021-11-07T18:39:34.091Z" },
+    { "diary_id": 2, "user_foreign_id": 2, "creation_date": "2021-11-07T18:39:35.091Z" },
+    { "diary_id": 3, "user_foreign_id": 3, "creation_date": "2021-11-07T18:39:36.091Z" }
+  ],
+  "entries": [
+    {
+      "entry_id": 1,
+      "diary_foreign_key": 1,
+      "entry_date": "2021-11-08T18:39:33.091Z",
+      "entry_text": "From the first diary",
+      "entry_img": ""
+    },
+    {
+      "entry_id": 1,
+      "diary_foreign_key": 2,
+      "entry_date": "2021-11-08T18:39:34.091Z",
+      "entry_text": "From the second diary",
+      "entry_img": ""
+    },
+    {
+      "entry_id": 1,
+      "diary_foreign_key": 3,
+      "entry_date": "2021-11-08T18:39:35.091Z",
+      "entry_text": "From the third diary",
+      "entry_img": ""
+    }
+  ]
+}
