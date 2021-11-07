@@ -9,8 +9,7 @@ Assisting with front end: <br>
 Assistting with back end: Andrew <br>
 
 
-**To Do: ** <br>
-
+**To Do:** <br>
 [] Ann to reach out to everyone to set up some time to work on the project remotely. <br> 
 [] Ann to reach out to Andrew for his availabilities & github name <br> 
 [] Gilman will draw a diagram <br>
@@ -18,7 +17,8 @@ Assistting with back end: Andrew <br>
 
 
 **Free / Available time:** <br>
-Elian: Mon & Wed: 12pm - 12am <br>
+Elian: <br>
+Mon & Wed: 12pm - 12am <br>
 Tue & Thurs: common hrs and after 6pm <br> 
 Friday: all day <br>
 Sunday: after class <br>
@@ -37,7 +37,7 @@ Sunday: after class <br>
 
 Sean: --need availabilities-- <br>
 
-Andrew: 
+Andrew: <br>
 Mon & Wed: all day before 5pm <br>
 Tue & Thurs: between 12 and 5pm <br>
 Friday: all day <br>
