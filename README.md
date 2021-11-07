@@ -5,13 +5,11 @@ This project will be a diary app containing front end and back end features. The
 Project manager: Ann Liberman <br>
 Overseeing back end: Gilman <br>
 Overseeing front end: Elian <br>
-Assisting with front end: Sean <br>
 Assistting with back end: Andrew <br>
 
 
 **To Do:** <br>
 [] Ann to reach out to everyone to set up some time to work on the project remotely. <br> 
-[] Ann to reach out to Sean for his availabilities & github name <br> 
 [] Gilman will draw a diagram <br>
 [] Elian will look at some other diary apps for ideas, put together a preliminary outline—potentially using Figma <br>  
 
@@ -34,8 +32,6 @@ Mon & Wed: after 2pm <br>
 Tesday & Thursday: common hrs and after 6pm <br>
 Friday: 2pm - 6pm <br>
 Sunday: after class <br>
-
-Sean: --need availabilities-- <br>
 
 Andrew: <br>
 Mon & Wed: all day before 5pm <br>
