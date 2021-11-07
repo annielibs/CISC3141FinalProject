@@ -43,7 +43,7 @@ Tue & Thurs: between 12 and 5pm <br>
 Friday: all day <br>
 Sunday: after class <br>
 
-**Project Feature Needs: ** <br>
+**Project Feature Needs:** <br>
 - place to create account <br>
 - place to look at entries <br>
 - place to edit entires <br>
