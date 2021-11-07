@@ -13,7 +13,7 @@ Assistting with back end: Andrew <br>
 [] Ann to reach out to everyone to set up some time to work on the project remotely. <br> 
 [] Ann to reach out to Sean for his availabilities & github name <br> 
 [] Gilman will draw a diagram <br>
-[] Will look at some other diary apps for ideas, think of an outline, potentially use Figma <br>  
+[] Elian will look at some other diary apps for ideas, put together a preliminary outline—potentially using Figma <br>  
 
 
 **Free / Available time:** <br>
