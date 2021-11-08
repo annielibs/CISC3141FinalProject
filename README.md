@@ -9,7 +9,7 @@ Assistting with back end: Andrew <br>
 <br>
 
 **To Do:** <br>
-[] Ann to reach out to everyone to set up some time to work on the project remotely. <br> 
+[] Ann waiting on everyone to set up some time to work on the project remotely. <br> 
 [] Gilman will draw a diagram <br>
 [] Elian will look at some other diary apps for ideas, put together a preliminary outline—potentially using Figma <br>  
 <br>
