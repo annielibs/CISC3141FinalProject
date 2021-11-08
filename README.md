@@ -10,8 +10,7 @@ Assistting with back end: Andrew <br>
 <br>
 
 **To Do:** <br>
-[] Ann waiting on everyone to set up some time to work on the project remotely. <br> 
-[] Gilman will draw a diagram <br>
+[] Ann waiting on Elian to confirm for Thursday 11/11 at 1pm - 2pm (remote meeting) <br> 
 [] Elian will look at some other diary apps for ideas, put together a preliminary outline—potentially using Figma <br>  
 <br>
 
