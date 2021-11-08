@@ -25,7 +25,7 @@ Sun: after class <br>
 <ins>Gilman:</ins> <br>
 Mon & Wed: not avail <br>
 Tue & Thurs: all day <br>
-Fri: after 6pm  <br>
+Fri: before 6pm  <br>
 Sun: after class <br>
 
 <ins>Ann:</ins> <br>

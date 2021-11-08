@@ -1,0 +1,79 @@
+{
+  "users": [
+    { "user_id": 1, "name": "Jane Doe" },
+    { "user_id": 2, "name": "Alice Key" },
+    { "user_id": 3, "name": "Bob Belcher" }
+  ],
+  "diaries": [
+    { "diary_id": 1, "user_foreign_id": 1, "creation_date": "2021-11-07T18:39:34.091Z" },
+    { "diary_id": 2, "user_foreign_id": 1, "creation_date": "2021-11-12T12:24:35.091Z" },
+    { "diary_id": 3, "user_foreign_id": 2, "creation_date": "2021-11-17T06:55:55.091Z" },
+    { "diary_id": 4, "user_foreign_id": 3, "creation_date": "2021-11-17T18:05:02.091Z" },
+    { "diary_id": 5, "user_foreign_id": 3, "creation_date": "2021-11-25T22:01:54.091Z" }
+  ],
+  "entries": [
+    {
+      "entry_id": 1,
+      "diary_foreign_key": 1,
+      "entry_date": "2021-11-07T18:40:34.091Z",
+      "entry_text": "First Entry in the First Diary (User 1)",
+      "entry_img": ""
+    },
+    {
+      "entry_id": 2,
+      "diary_foreign_key": 1,
+      "entry_date": "2021-11-08T18:45:22.091Z",
+      "entry_text": "Second Entry in the First Diary (User 1)",
+      "entry_img": ""
+    },
+    {
+      "entry_id": 3,
+      "diary_foreign_key": 2,
+      "entry_date": "2021-11-13T17:34:36.091Z",
+      "entry_text": "First Entry in the Second diary (User 1)",
+      "entry_img": ""
+    },
+    {
+      "entry_id": 4,
+      "diary_foreign_key": 3,
+      "entry_date": "2021-11-17T06:59:55.091Z",
+      "entry_text": "First Entry in the Third diary (User 2)",
+      "entry_img": ""
+    },
+    {
+      "entry_id": 5,
+      "diary_foreign_key": 3,
+      "entry_date": "2021-11-17T07:37:25.091Z",
+      "entry_text": "Second Entry in the Third diary (User 2)",
+      "entry_img": ""
+    },
+    {
+      "entry_id": 6,
+      "diary_foreign_key": 3,
+      "entry_date": "2021-11-17T07:45:55.091Z",
+      "entry_text": "Third Entry in the Third diary (User 2)",
+      "entry_img": ""
+    },
+    {
+      "entry_id": 7,
+      "diary_foreign_key": 4,
+      "entry_date": "2021-11-17T20:15:02.091Z",
+      "entry_text": "First Entry in the Fourth diary (User 3)",
+      "entry_img": ""
+    },
+    {
+      "entry_id": 8,
+      "diary_foreign_key": 3,
+      "entry_date": "2021-11-26T12:01:52.091Z",
+      "entry_text": "First Entry in the Fifth diary (User 3)",
+      "entry_img": ""
+    },
+    {
+      "entry_id": 9,
+      "diary_foreign_key": 3,
+      "entry_date": "2021-11-27T12:23:34.091Z",
+      "entry_text": "Second Entry in the Fifth diary (User 3)",
+      "entry_img": ""
+    }
+  ]
+}
