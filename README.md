@@ -10,9 +10,13 @@ Assistting with back end: Andrew <br>
 <br>
 
 **To Do:** <br>
-[] Ann waiting on Elian to confirm for Thursday 11/11 at 1pm - 2pm (remote meeting) <br> 
-[] Elian will look at some other diary apps for ideas, put together a preliminary outline—potentially using Figma <br>  
+[] Andrew & Gilman will be in touch with each other to discuss the back end; how will the data be presented? Which attributes would we like to add to our wishlist in addition to the default attributes (start w/ default for now, and then add extra ones afterwards).<br> 
+[] Andrew & Gilman plan to set up a preliminary/basic database by early next week.<br>  
+[] Elian will start working on the html & the styling, he will implement something simple first and then add fluff if there's time.<br>
+[] Ann will continue to work on documentation, compile all of our current documents and data into one place, work on some text for the project inspiration/background, reasoning behind our ideas, etc..<br>
 <br>
+**Next meeting will be on:**<br> 
+Thursday, November 18th, at 1:00 PM, remotely on Discord. <br>
 
 **Free / Available time:** <br>
 <ins>Elian:</ins> <br>
