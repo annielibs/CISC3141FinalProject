@@ -17,6 +17,7 @@ Assistting with back end: Andrew <br>
 <br>
 **Next meeting will be on:**<br> 
 Thursday, November 18th, at 1:00 PM, remotely on Discord. <br>
+<br>
 
 **Free / Available time:** <br>
 <ins>Elian:</ins> <br>
