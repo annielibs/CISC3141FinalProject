@@ -1,0 +1,21 @@
+Outline
+
+Log in /sign - up:
+    Authentication form
+    Sign up form
+Home:
+    Nav bar
+    New entry
+    Last entry
+    All entries
+    Lock/unlock journal
+Entry page:
+    Nav bar
+    Previous entries list on the side (you can hide it)
+    Writing page section
+Entry list:
+    List of all entries, can search up by name or organize by last modified, date started etc.
+Account information:
+    Name
+    Email
+    Log out
