@@ -10,10 +10,11 @@ Assistting with back end: Andrew <br>
 <br>
 
 **To Do:** <br>
-[ ] Andrew & Gilman will be in touch with each other to discuss the back end; how will the data be presented? Which attributes would we like to add to our wishlist in addition to the default attributes (start w/ default for now, and then add extra ones afterwards).<br> 
-[ ] Andrew & Gilman plan to set up a preliminary/basic database by early next week.<br>
-[ ] Elian will start working on the html & the styling, he will implement something simple first and then add fluff if there's time.<br>
-[ ] Ann will continue to work on documentation, compile all of our current documents and data into one place, work on some text for the project inspiration/background, reasoning behind our ideas, etc..<br>
+- [ ] Andrew & Gilman will be in touch with each other to discuss the back end; how will the data be presented? Which attributes would we like to add to our wishlist in addition to the default attributes (start w/ default for now, and then add extra ones afterwards).<br> 
+- [ ] Andrew & Gilman plan to set up a preliminary/basic database by early next week.<br>
+- [ ] Elian will start working on the html & the styling, he will implement something simple first and then add fluff if there's time.<br>
+- [ ] Ann will continue to work on documentation, compile all of our current documents and data into one place, work on some text for the project inspiration/background, reasoning behind our ideas, etc..<br>
+- [ ] During our next meeting, come up with a company / product name<br> 
 <br>
 **Next meeting will be on:**<br> 
 Thursday, November 18th, at 1:00 PM, remotely on Discord. <br>
