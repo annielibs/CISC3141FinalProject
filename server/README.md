@@ -17,7 +17,7 @@ _Make sure that you have **Node.js** and **NPM** installed_
 Download the appropriate node_modules by running the following command in the `server` directory
 
 ```
-npm init
+npm install
 ```
 
 To start up the json-server, run the following command
