@@ -10,7 +10,10 @@
   "author": "Group 10",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "pg": "^8.7.1",
+    "sequelize": "^6.9.0"
   },
   "devDependencies": {
     "json-server": "^0.17.0"
