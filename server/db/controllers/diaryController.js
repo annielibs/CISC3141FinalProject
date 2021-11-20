@@ -26,7 +26,7 @@ const createSingleDiary = (req, res) => {
   const diaryName = req.body.diary_name; // get diary name from client request
 
   // create new Diary object save to database
-  const newDiary = Diaries.create({
+  Diaries.create({
     diary_name: diaryName,
     diary_creation_date: new Date().toISOString().slice(0, 10),
   })
@@ -43,7 +43,7 @@ const createSingleDiary = (req, res) => {
 // UPDATE diary information
 const updateSingleDiary = (req, res) => {
   const diaryName = req.params.diaryName;
-  const newDiaryName = req.params.newDiaryName;
+  const newDiaryName = req.body.newDiaryName;
 
   Diaries.update(
     { diary_name: newDiaryName }, // updated value
