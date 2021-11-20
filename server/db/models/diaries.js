@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const db = require('../db');
 
-const Diaries = db.create('diaries', {
+const Diaries = db.define('diaries', {
     diary_name:{
         type: Sequelize.STRING,
         allowNull: false

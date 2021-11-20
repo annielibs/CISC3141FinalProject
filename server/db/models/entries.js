@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const db = require('../db');
 
-const Entries = db.create('entries', {
+const Entries = db.define('entries', {
     entry_creation_date:{
         type: Sequelize.DATE,
         defaultValue: Sequelize.NOW,
