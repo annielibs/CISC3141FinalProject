@@ -18,8 +18,8 @@ Assistting with back end: Andrew <br>
 - [ ] Andrew to set up connection 
 - [ ] Gilman start working on controllers 
 <br>
-**Next meeting will be on:**<br> 
-Thursday, November 18th, at 1:00 PM, remotely on Discord. <br>
+**Next meeting proposed for:**<br> 
+Tuesday, November 30th, common horus, remotely on Discord. <br>
 <br>
 
 **Free / Available time:** <br>
