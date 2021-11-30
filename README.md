@@ -1,5 +1,5 @@
 # CISC3141FinalProject
-## This project will be a diary app containing front end and back end features. The diary app with have read, write, & delete capabilites. 
+## Jurnl will be a diary app containing front end and back end features. Jurnl with have read, write, & delete capabilites. 
 ### Project log can be found [here](https://docs.google.com/spreadsheets/d/1nErqF08F0zkLsUQIwgYAL4NGpi0mv8W7p4hD1mMQAXg/edit#gid=0)
 
 **Project Roles:** <br>
