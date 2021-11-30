@@ -1,4 +1,4 @@
-const Diaries = require("../models/diaries");
+const Diaries = require("../../db/models/diaries");
 
 /*
   Controller handles HTTP requests relating to Diaries

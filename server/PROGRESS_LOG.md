@@ -44,6 +44,15 @@ npm run dev
 ```
 Requires a running PostgreSQL database configured with the info in the `.env` file
 
+<br>**=============== 11/30/2021 ==================**
+
+Andrew restructured the backend in order to properly connect to the database
+
+Changes:<br>
+- moved controllers and routes out of the db folder and into the api folder
+- moved the server index folder from the db folder to the server folder
+- changed the file path of the npm run dev script for nodemon
+
 <br>**=============== TODO ==================**
 
 ### Code 💻
@@ -53,6 +62,7 @@ Requires a running PostgreSQL database configured with the info in the `.env` fi
 - Implement User login
 - Implement new features (e.g. visibility)
 - Consult with group on what features to implement next
+- Create a basic seed script to populate the database
 
 ### Documentation 📝
 - Update diagrams as more features/attributes introduced
