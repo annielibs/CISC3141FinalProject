@@ -25,6 +25,6 @@ app.use("/api/diaries", diaryRouter);
 // app.use("/api/entries", entriesRouter);
 // app.use("/api/users", userRouter);
 
-const syncDb = () => db.sync({force:true});
+const syncDb = () => db.sync({alter:true});
 //use force:true if you want to clear the database tables
 syncDb();
