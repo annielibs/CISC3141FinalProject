@@ -4,6 +4,7 @@ const Diaries = require("../../db/models/diaries");
   Controller handles HTTP requests relating to Diaries
     - CREATE new diary
     - READ all diaries
+    - READ single diary
     - UPDATE existing diary
     - DELETE existing diary
 */
@@ -19,6 +20,22 @@ const getAllDiaries = (req, res) => {
       res.status(500).send("Unable to retrieve user diaries");
       console.log("Unsuccessful operation retrieving diaries from database", err);
     });
+};
+
+// READ single diary
+const getDiaryByName = (req, res) => {
+  const diaryName = req.params.diaryName;
+
+  Diaries.findOne({
+    where: { diary_name: diaryName },
+  })
+    .then((diary) => {
+      res.status(200).send(diary);
+      console.log(`Successfully retrieved diary with name "${diaryName}"`);
+    })
+    .catch((err) =>
+      res.status(500).send(`Unsuccessful operation retrieving diary with name "${diaryName}"`, err)
+    );
 };
 
 // CREATE single new diary
@@ -79,8 +96,14 @@ const deleteSingleDiary = (req, res) => {
     })
     .catch((err) => {
       res.status(500).send(`Unable to delete diary: "${diaryName}"`);
-      console.log(`Unsuccessful operation to DELETE "${diaryName}" from database`);
+      console.log(`Unsuccessful operation to DELETE "${diaryName}" from database`, err);
     });
 };
 
-module.exports = { getAllDiaries, createSingleDiary, deleteSingleDiary, updateSingleDiary };
+module.exports = {
+  getAllDiaries,
+  getDiaryByName,
+  createSingleDiary,
+  deleteSingleDiary,
+  updateSingleDiary,
+};
