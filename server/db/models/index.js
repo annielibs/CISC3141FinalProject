@@ -5,8 +5,6 @@ const Diaries = require('./diaries');
 User.hasMany(Diaries);
 Diaries.belongsTo(User);
 Diaries.hasMany(Entries);
-Entries.belongsTo(Diaries, {
-    foreignKey: 'diaryId',
-});
+Entries.belongsTo(Diaries);
 
 module.exports = {User, Entries, Diaries};

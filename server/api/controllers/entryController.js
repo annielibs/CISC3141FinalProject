@@ -1,4 +1,5 @@
 const Entries = require('../../db/models/entries');
+const Diaries = require('../../db/models/diaries');
 
 
 const getAllEntries = async (req, res) =>{
@@ -12,10 +13,9 @@ const getAllEntries = async (req, res) =>{
 }
 const getEntriesByDiary = async (req, res) =>{
     try{
-        //need to update with diary ID once foreign key is put into the table
         const diaryId = req.params.diaryId;
         const entries = await Entries.findAll({
-            where: {id: diaryId}
+            where: {diaryId: diaryId}
         })
         res.status(200).send(entries);
     }catch(err){
