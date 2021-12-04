@@ -1,5 +1,5 @@
 const express = require("express");
-const db = require("./db/db.js");
+const db = require("./db/index");
 require("dotenv").config();
 
 // server port
@@ -18,11 +18,11 @@ db.authenticate()
 
 // routers to endpoints
 const diaryRouter = require("./api/routes/diaryRoutes");
-// const entriesRouter = require("./routes/entriesRoutes");
+const entriesRouter = require("./api/routes/entriesRoutes");
 // const userRouter = require("./routes/userRoutes");
 
 app.use("/api/diaries", diaryRouter);
-// app.use("/api/entries", entriesRouter);
+app.use("/api/entries", entriesRouter);
 // app.use("/api/users", userRouter);
 
 const syncDb = () => db.sync({alter:true});
