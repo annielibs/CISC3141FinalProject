@@ -1,3 +1,4 @@
+const { Entries } = require("../../db/models");
 const Diaries = require("../../db/models/diaries");
 
 /*
@@ -26,7 +27,10 @@ const getAllDiaries = async (req, res) => {
 const getDiaryByName = async (req, res) => {
     try {
         const diaryName = req.params.diaryName;
-        const diary = await Diaries.findOne({ where: { diary_name: diaryName } });
+        const diary = await Diaries.findOne({ 
+          include: Entries,
+          where: { diary_name: diaryName } 
+        });
 
         res.status(200).send(diary);
         console.log(`Successfully retrieved diary with name "${diaryName}"`);
