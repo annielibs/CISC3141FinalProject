@@ -11,9 +11,13 @@ const getAllUsers = async(req, res) =>{
     }
 }
 
-const getUsersDiaries = async(req, res) =>{
+const getSingleUser = async(req, res) =>{
     try{
-        const user = await User.findOne({where: {email: req.params.email }})
+        const user = await User.findOne({where: {email: req.params.email}});
+        res.status(200).send(user);
+    }catch(err){
+        console.error(err);
+        res.status(500).send(`Unable to find user with ${req.params.email}`);
     }
 }
 
@@ -55,4 +59,4 @@ const deleteUser = async(req, res) =>{
     }
 }
 
-module.exports={getAllUsers, createUser, updateUser, deleteUser};
+module.exports={getAllUsers,getSingleUser, createUser, updateUser, deleteUser};
