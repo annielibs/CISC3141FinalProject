@@ -15,9 +15,14 @@ Assistting with back end: Andrew <br>
 - [ ] Elian will start working on the html & the styling, he will implement something simple first and then add fluff if there's time.<br>
 - [ ] Ann will continue to work on documentation, compile all of our current documents and data into one place, work on some text for the project inspiration/background, reasoning behind our ideas, etc..<br>
 - [ ] During our next meeting, come up with a company / product name<br> 
+
+=======
+- [ ] Andrew to set up connection 
+- [ ] Gilman start working on controllers 
 <br>
-**Next meeting will be on:**<br> 
-Thursday, November 18th, at 1:00 PM, remotely on Discord. <br>
+**Next meeting proposed for:**<br> 
+Tuesday, November 30th, common hours, remotely on Discord. <br>
+>>>>>>> 727701ede41017d679979ce645b92b191bcebf2e
 <br>
 
 **Free / Available time:** <br>
