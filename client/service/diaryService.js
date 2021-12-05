@@ -5,25 +5,25 @@ const api = require("../api/index.js");
 */
 
 class DiaryService {
-  createDiary() {
-    return api.post("/diaries/create-diary");
-  }
+    createDiary() {
+        return api.post("/diaries/create-diary");
+    }
 
-  readAllDiaries() {
-    return api.get("/diaries/");
-  }
+    readAllDiaries() {
+        return api.get("/diaries/");
+    }
 
-  readOneDiary(diaryName) {
-    return api.get(`/diaries/:${diaryName}`);
-  }
+    readOneDiary(diaryName) {
+        return api.get(`/diaries/:${diaryName}`);
+    }
 
-  updateDiary(diaryName) {
-    return api.patch(`/diaries/update-diary/:${diaryName}`);
-  }
+    updateDiary(diaryName) {
+        return api.patch(`/diaries/update-diary/:${diaryName}`);
+    }
 
-  deleteDiary(diaryName) {
-    return api.delete(`/diaries/delete-diary/:${diaryName}`);
-  }
+    deleteDiary(diaryName) {
+        return api.delete(`/diaries/delete-diary/:${diaryName}`);
+    }
 }
 
-module.exports = DiaryService;
+module.exports = new DiaryService();
