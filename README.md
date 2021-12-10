@@ -10,6 +10,7 @@ Assistting with back end: Andrew <br>
 <br>
 
 **To Do:** <br>
+<<<<<<< HEAD
 - [ ] Andrew suggested writing a C script which can allow us all to populate with the same dummy data. Shouldnt be a problem to have our own separate data. For when we present, matters how the data will show up.  
 
 - [ ] Gilman, next step is to find a hosting service so we can all have the same data. Should finalize a service before next time we meet. 
@@ -22,6 +23,7 @@ Assistting with back end: Andrew <br>
 
 **Next meeting will be on:**<br> 
 Sunday, December 5th, after class. <br>
+=======
 <br>
 
 **Free / Available time:** <br>
