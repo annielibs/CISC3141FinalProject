@@ -7,12 +7,7 @@ const cors = require("cors");
 const PORT = process.env.PORT || 5001;
 
 const app = express();
-app.use(
-  cors({
-    origin: process.env.CLIENT_HOST,
-    credentials: true,
-  })
-);
+app.use(cors());
 app.use(express.json()); // work with JSON data
 
 // test db connection and start server
