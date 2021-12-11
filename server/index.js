@@ -1,11 +1,18 @@
 const express = require("express");
 const db = require("./db/index");
 require("dotenv").config();
+const cors = require("cors");
 
 // server port
 const PORT = process.env.PORT || 5001;
 
 const app = express();
+app.use(
+  cors({
+    origin: process.env.CLIENT_HOST,
+    credentials: true,
+  })
+);
 app.use(express.json()); // work with JSON data
 
 // test db connection and start server
@@ -25,6 +32,6 @@ app.use("/api/diaries", diaryRouter);
 app.use("/api/entries", entriesRouter);
 app.use("/api/users", userRouter);
 
-const syncDb = () => db.sync({alter:true});
+const syncDb = () => db.sync({ alter: true });
 //use force:true if you want to clear the database tables
 syncDb();
