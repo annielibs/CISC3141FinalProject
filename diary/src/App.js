@@ -1,61 +1,20 @@
-import { useEffect, useState } from "react";
-import uuid from "react-uuid";
-import "./App.css";
-import Main from "./main/Main";
-import Sidebar from "./sidebar/Sidebar";
+import "./styles/App.css";
+import { Routes, Route } from "react-router-dom";
+
+import NavMenu from "./components/navMenu.js";
+import HomePage from "./components/homePage.js";
+import DiaryPage from "./components/diariesPage.js";
+import EntriesPage from "./components/entriesPage.js";
 
 function App() {
-  const [notes, setNotes] = useState(
-    localStorage.notes ? JSON.parse(localStorage.notes) : []
-  );
-  const [activeNote, setActiveNote] = useState(false);
-
-  useEffect(() => {
-    localStorage.setItem("notes", JSON.stringify(notes));
-  }, [notes]);
-
-  const onAddNote = () => {
-    const newNote = {
-      id: uuid(),
-      title: "Enter your title",
-      body: "",
-      lastModified: Date.now(),
-    };
-
-    setNotes([newNote, ...notes]);
-    setActiveNote(newNote.id);
-  };
-
-  const onDeleteNote = (noteId) => {
-    setNotes(notes.filter(({ id }) => id !== noteId));
-  };
-
-  const onUpdateNote = (updatedNote) => {
-    const updatedNotesArr = notes.map((note) => {
-      if (note.id === updatedNote.id) {
-        return updatedNote;
-      }
-
-      return note;
-    });
-
-    setNotes(updatedNotesArr);
-  };
-
-  const getActiveNote = () => {
-    return notes.find(({ id }) => id === activeNote);
-  };
-
   return (
     <div className="App">
-      <Sidebar
-        notes={notes}
-        onAddNote={onAddNote}
-        onDeleteNote={onDeleteNote}
-        activeNote={activeNote}
-        setActiveNote={setActiveNote}
-      />
-      <Main activeNote={getActiveNote()} onUpdateNote={onUpdateNote} />
+      <NavMenu pageWrapId={"page-wrap"} outerContainerId={"outer-container"} />
+      <Routes>
+        <Route exact path={"/"} element={<HomePage />} />
+        <Route exact path={"Diaries"} element={<DiaryPage />} />
+        <Route exact path={"Entries"} element={<EntriesPage />} />
+      </Routes>
     </div>
   );
 }

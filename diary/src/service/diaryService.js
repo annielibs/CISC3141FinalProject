@@ -26,4 +26,4 @@ class DiaryService {
   }
 }
 
-module.exports = DiaryService;
+module.exports = new DiaryService();
