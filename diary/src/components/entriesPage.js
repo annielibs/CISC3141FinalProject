@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Sidebar from "./sidebar/Sidebar.js";
-import Main from "../main/Main.js";
+import Main from "../components/main/Main.js";
 import uuid from "react-uuid";
 import "../styles/Main.css";
 import "../styles/Sidebar.css";

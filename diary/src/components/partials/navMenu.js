@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { slide as Nav } from "react-burger-menu";
-import "../styles/NavMenu.css";
+import "../../styles/NavMenu.css";
 
 const NavMenu = () => {
   return (
