@@ -5,7 +5,7 @@ import "../styles/Home.css";
 const HomePage = () => {
   return (
     <div className="homepage-container">
-      <img className="app-logo" src={jurnlLogo}></img>
+      <img className="app-logo" src={jurnlLogo} alt="logo"></img>
     </div>
   );
 };

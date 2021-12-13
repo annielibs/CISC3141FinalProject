@@ -5,7 +5,7 @@ const api = require("../api/index.js");
 */
 
 class DiaryService {
-  createDiary() {
+  createDiary(diary) {
     return api.post("/diaries/create-diary");
   }
 

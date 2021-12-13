@@ -1,0 +1,73 @@
+.diary-hub {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: rgba(184, 35, 184, 0.075);
+}
+
+.diary-hub-heading {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  font-size: 4rem;
+}
+
+/*
+diary card styles
+*/
+.diary-card-list {
+  margin: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.diary-card-container {
+  margin: 2rem;
+  width: 300px;
+  overflow: hidden;
+  box-shadow: 0px 0px 15px -5px;
+  background-color: white;
+}
+
+.diary-card-container:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 15px 0px;
+}
+
+.diary-image-container img {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.diary-title {
+  margin: 1rem;
+}
+
+.diary-description {
+  margin: 1rem;
+  font-style: italic;
+}
+
+.diary-card-button {
+  margin: 1rem 5rem;
+  padding: 0.8rem;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+  color: white;
+  background-color: purple;
+}
+
+.diary-card-button:hover {
+  transform: scale(1.05);
+}
+
+.diary-card-button:active {
+  background-color: rgba(128, 0, 128, 0.733);
+}
