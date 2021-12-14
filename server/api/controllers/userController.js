@@ -1,5 +1,7 @@
 const {Users} = require('../../db/models');
 const {Diaries} = require('../../db/models');
+const jwt = require('jsonwebtoken');
+const {secret} = require('../../config/auth.config');
 
 const getAllUsers = async(req, res) =>{
     try{
@@ -13,11 +15,32 @@ const getAllUsers = async(req, res) =>{
 
 const getSingleUser = async(req, res) =>{
     try{
-        const user = await Users.findOne({where: {email: req.params.email}});
-        res.status(200).send(user);
+        const header = req.headers['authorization'];
+
+    if(typeof header !== 'undefined') {
+        const bearer = header.split(' ');
+        const token = bearer[1];
+        jwt.verify(token, secret, (err, authorizedData) =>{
+            if(err){
+                //If error send Forbidden (403)
+                console.log('ERROR: Could not connect to the protected route');
+                res.sendStatus(403);
+            } else {
+                //If token is successfully verified, we can send the autorized data 
+                res.json({
+                    message: 'Successful log in',
+                    authorizedData
+                });
+                console.log('SUCCESS: Connected to protected route');
+            }
+        })
+    }
+        res.send('no.');
+        // const user = await Users.findOne({where: {email: req.params.email}});
+        // res.status(200).send(user);
     }catch(err){
         console.error(err);
-        res.status(500).send(`Unable to find user with ${req.params.email}`);
+        res.status(500).send(`Unable to find user with ${req.params.id}`);
     }
 }
 
@@ -42,9 +65,10 @@ const createUser = async(req, res) =>{
 
 const updateUser = async(req, res) =>{
     try{
+      
         const user = await Users.findOne({
             where: {
-                email: req.params.email
+                id: req.params.id
             }
         });
         await user.update(req.body);
@@ -57,7 +81,7 @@ const updateUser = async(req, res) =>{
 
 const deleteUser = async(req, res) =>{
     try{
-        await Users.destroy({where: {email: req.params.email}});
+        await Users.destroy({where: {id: req.params.id}});
         res.status(200).send('deleted user');
 
     }catch(err){

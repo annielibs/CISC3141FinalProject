@@ -9,8 +9,8 @@ const express = require('express');
 const userRouter = express.Router();
 
 userRouter.get('/',getAllUsers);
-userRouter.get('/:email', getSingleUser);
+userRouter.get('/:id', getSingleUser);
 userRouter.post('/create-user',createUser);
-userRouter.patch('/update-user/:email',updateUser);
-userRouter.delete('/delete-user/:email',deleteUser);
+userRouter.patch('/update-user/:id',updateUser);
+userRouter.delete('/delete-user/:id',deleteUser);
 module.exports= userRouter;
