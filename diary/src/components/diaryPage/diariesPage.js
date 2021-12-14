@@ -18,6 +18,8 @@ const CreateDiaryButton = ({ createBtnHandler }) => {
 
 // Diary card component
 const Diary = ({ diary }) => {
+  const diaryId = diary.id;
+
   return (
     <div className="diary-card-container">
       <div className="diary-image-container">
@@ -29,7 +31,7 @@ const Diary = ({ diary }) => {
       <div className="diary-description">
         <p>This is the decription of the diary</p>
       </div>
-      <Link to={"../Entries"} className="diary-card-button">
+      <Link to={`/${diaryId}/entries-page`} className="diary-card-button">
         View Entries
       </Link>
     </div>
