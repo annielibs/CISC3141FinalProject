@@ -1,9 +1,9 @@
-const {User} = require('../../db/models');
+const {Users} = require('../../db/models');
 const {Diaries} = require('../../db/models');
 
 const getAllUsers = async(req, res) =>{
     try{
-        const users = await User.findAll({ include: Diaries})
+        const users = await Users.findAll({ include: Diaries})
         res.status(200).send(users);
     }catch(err){
         console.error(err);
@@ -13,7 +13,7 @@ const getAllUsers = async(req, res) =>{
 
 const getSingleUser = async(req, res) =>{
     try{
-        const user = await User.findOne({where: {email: req.params.email}});
+        const user = await Users.findOne({where: {email: req.params.email}});
         res.status(200).send(user);
     }catch(err){
         console.error(err);
@@ -23,20 +23,26 @@ const getSingleUser = async(req, res) =>{
 
 const createUser = async(req, res) =>{
     try{
-        await User.create({
+        if (await Users.findOne({where: {email: req.body.email}}) !== null){
+            res.status(500).send('email exists');
+        } 
+        else{
+            await Users.create({
             username: req.body.username,
-            email: req.body.email
-        })
-        res.status(200).send('user created');
+            email: req.body.email,
+            password: req.body.password
+            })
+            res.status(200).send('user created');
+        }
     }catch(err){
         console.error(err);
-        res.status(500).send('Unable to create a user');
+        res.status(500).send('Unable to create a user'+err);
     }
 }
 
 const updateUser = async(req, res) =>{
     try{
-        const user = await User.findOne({
+        const user = await Users.findOne({
             where: {
                 email: req.params.email
             }
@@ -51,12 +57,13 @@ const updateUser = async(req, res) =>{
 
 const deleteUser = async(req, res) =>{
     try{
-        await User.destroy({where: {email: req.params.email}});
+        await Users.destroy({where: {email: req.params.email}});
         res.status(200).send('deleted user');
 
     }catch(err){
         res.status(500).send('unable to delete user');
     }
 }
+
 
 module.exports={getAllUsers,getSingleUser, createUser, updateUser, deleteUser};

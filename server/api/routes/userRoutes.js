@@ -3,7 +3,7 @@ const {
     getSingleUser,
     createUser,
     updateUser,
-    deleteUser
+    deleteUser,
 } = require('../controllers/userController');
 const express = require('express');
 const userRouter = express.Router();
