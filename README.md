@@ -1,5 +1,5 @@
 # CISC3141FinalProject
-## This project will be a diary app containing front end and back end features. The diary app with have read, write, & delete capabilites. 
+## Jurnl will be a diary app containing front end and back end features. Jurnl with have read, write, & delete capabilites. 
 ### Project log can be found [here](https://docs.google.com/spreadsheets/d/1nErqF08F0zkLsUQIwgYAL4NGpi0mv8W7p4hD1mMQAXg/edit#gid=0)
 
 **Project Roles:** <br>
@@ -10,16 +10,20 @@ Assistting with back end: Andrew <br>
 <br>
 
 **To Do:** <br>
-- [ ] Andrew & Gilman will be in touch with each other to discuss the back end; how will the data be presented? Which attributes would we like to add to our wishlist in addition to the default attributes (start w/ default for now, and then add extra ones afterwards).<br> 
-- [ ] Andrew & Gilman plan to set up a preliminary/basic database by early next week.<br>
-- [ ] Elian will start working on the html & the styling, he will implement something simple first and then add fluff if there's time.<br>
-- [ ] Ann will continue to work on documentation, compile all of our current documents and data into one place, work on some text for the project inspiration/background, reasoning behind our ideas, etc..<br>
-- [ ] During our next meeting, come up with a company / product name<br> 
-- [ ] Andrew to set up connection 
-- [ ] Gilman start working on controllers 
-<br>
-**Next meeting proposed for:**<br> 
-Tuesday, November 30th, common hours, remotely on Discord. <br>
+<<<<<<< HEAD
+- [ ] Andrew suggested writing a C script which can allow us all to populate with the same dummy data. Shouldnt be a problem to have our own separate data. For when we present, matters how the data will show up.  
+
+- [ ] Gilman, next step is to find a hosting service so we can all have the same data. Should finalize a service before next time we meet. 
+
+- [ ] Elian, talked with Andrew last week and they will connect the back-end and front-end. Will push to github the front end today too. Besides the home page and entry page, there's not a lot of other stuff to do front end wise. 
+
+- [ ] Also discussed if we not doing user logins. So far we are not sure/depends on how much time we have left. Otherwise, the backend should be finished soon.
+
+- [ ] Briefly discussed how to do controls in order to keep it consistant, decided to keep it the way we started it, for the sake of consistency. 
+
+**Next meeting will be on:**<br> 
+Sunday, December 5th, after class. <br>
+=======
 <br>
 
 **Free / Available time:** <br>
