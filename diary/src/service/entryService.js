@@ -1,8 +1,7 @@
 const { getAllEntries } = require("../../../server/api/controllers/entryController");
-const api = require("../api/index.js")
+const api = require("../api/index.js");
 
 class EntryService {
-  
   createEntry() {
     return api.post("/create_entry");
   }
@@ -24,4 +23,4 @@ class EntryService {
   }
 }
 
-module.exports = new EntryService();
+export default new EntryService();

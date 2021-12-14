@@ -26,4 +26,4 @@ class DiaryService {
   }
 }
 
-module.exports = new DiaryService();
+export default new DiaryService();
