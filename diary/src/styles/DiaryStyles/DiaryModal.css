@@ -9,7 +9,8 @@
 
 .modal-form-container {
   position: fixed;
-  width: 20%;
+  min-height: 400px;
+  min-width: 300px;
   height: 40%;
   top: 50%;
   left: 50%;
@@ -60,7 +61,7 @@
   height: 90%;
 }
 
-.diary-submit-button {
+.diary-modal-btn {
   margin: 0rem auto;
   padding: 0.8rem;
   font-size: 1.2rem;
@@ -71,6 +72,6 @@
   background-color: purple;
 }
 
-.diary-submit-button:active {
+.diary-modal-btn:active {
   background-color: rgba(128, 0, 128, 0.733);
 }

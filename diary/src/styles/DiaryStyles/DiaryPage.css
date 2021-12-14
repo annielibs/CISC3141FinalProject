@@ -13,9 +13,39 @@
   font-size: 4rem;
 }
 
-/*
-diary card styles
-*/
+/* diary modal button */
+
+.modal-popup-btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.diary-modal-popup-btn {
+  padding: 1.3rem;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6%;
+  border: none;
+  box-shadow: 0px 0px 15px -5px grey;
+  color: white;
+  background-color: rgb(255, 196, 0);
+}
+
+.diary-modal-popup-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 10px 0px grey;
+}
+
+.diary-modal-popup-btn:active {
+  background-color: rgba(255, 196, 0, 0.493);
+}
+
+/* diary card styles */
+
 .diary-card-list {
   margin: 2rem;
   display: flex;
