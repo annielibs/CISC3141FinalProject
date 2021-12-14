@@ -113,14 +113,16 @@ const DiaryPage = () => {
   return (
     <div className="diary-hub">
       <h1 className="diary-hub-heading">Diaries</h1>
-      {() => {
-        if (isVisibleModal) return <DiaryModal />;
-      }}
       <div className="modal-popup-btn-container">
         <CreateDiaryButton createBtnHandler={createButtonHandler} />
         <EditDiaryButton editHandler={editButtonHandler} />
       </div>
       <DiaryList diaries={diaries} canEdit={isEditable} deleteHandler={deleteButtonHandler} />
+      {isVisibleModal ? (
+        <DiaryModal modalClassName={"modal-display"} />
+      ) : (
+        <DiaryModal modalClassName={"modal-display-none"} />
+      )}
     </div>
   );
 };

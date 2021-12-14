@@ -36,7 +36,7 @@ const DiaryForm = ({ name, nameHandler, description, descriptionHandler, formHan
 };
 
 // specialized modal component to handle New Diary creation form
-const DiaryModal = () => {
+const DiaryModal = ({ modalClassName }) => {
   const [diaryName, setDiaryName] = useState("");
   const [diaryDescription, setDiaryDescription] = useState("");
 
@@ -60,7 +60,7 @@ const DiaryModal = () => {
   };
 
   return (
-    <div className="modal-display">
+    <div className={modalClassName}>
       <DiaryForm
         name={diaryName}
         nameHandler={nameHandler}
