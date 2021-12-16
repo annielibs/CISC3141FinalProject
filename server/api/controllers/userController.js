@@ -1,9 +1,11 @@
-const {User} = require('../../db/models');
+const {Users} = require('../../db/models');
 const {Diaries} = require('../../db/models');
+const jwt = require('jsonwebtoken');
+const {secret} = require('../../config/auth.config');
 
 const getAllUsers = async(req, res) =>{
     try{
-        const users = await User.findAll({ include: Diaries})
+        const users = await Users.findAll({ include: Diaries})
         res.status(200).send(users);
     }catch(err){
         console.error(err);
@@ -13,32 +15,60 @@ const getAllUsers = async(req, res) =>{
 
 const getSingleUser = async(req, res) =>{
     try{
-        const user = await User.findOne({where: {email: req.params.email}});
-        res.status(200).send(user);
+        const header = req.headers['authorization'];
+
+    if(typeof header !== 'undefined') {
+        const bearer = header.split(' ');
+        const token = bearer[1];
+        jwt.verify(token, secret, (err, authorizedData) =>{
+            if(err){
+                //If error send Forbidden (403)
+                console.log('ERROR: Could not connect to the protected route');
+                res.sendStatus(403);
+            } else {
+                //If token is successfully verified, we can send the autorized data 
+                res.json({
+                    message: 'Successful log in',
+                    authorizedData
+                });
+                console.log('SUCCESS: Connected to protected route');
+            }
+        })
+    }
+        res.send('no.');
+        // const user = await Users.findOne({where: {email: req.params.email}});
+        // res.status(200).send(user);
     }catch(err){
         console.error(err);
-        res.status(500).send(`Unable to find user with ${req.params.email}`);
+        res.status(500).send(`Unable to find user with ${req.params.id}`);
     }
 }
 
 const createUser = async(req, res) =>{
     try{
-        await User.create({
+        if (await Users.findOne({where: {email: req.body.email}}) !== null){
+            res.status(500).send('email exists');
+        } 
+        else{
+            await Users.create({
             username: req.body.username,
-            email: req.body.email
-        })
-        res.status(200).send('user created');
+            email: req.body.email,
+            password: req.body.password
+            })
+            res.status(200).send('user created');
+        }
     }catch(err){
         console.error(err);
-        res.status(500).send('Unable to create a user');
+        res.status(500).send('Unable to create a user'+err);
     }
 }
 
 const updateUser = async(req, res) =>{
     try{
-        const user = await User.findOne({
+      
+        const user = await Users.findOne({
             where: {
-                email: req.params.email
+                id: req.params.id
             }
         });
         await user.update(req.body);
@@ -51,12 +81,13 @@ const updateUser = async(req, res) =>{
 
 const deleteUser = async(req, res) =>{
     try{
-        await User.destroy({where: {email: req.params.email}});
+        await Users.destroy({where: {id: req.params.id}});
         res.status(200).send('deleted user');
 
     }catch(err){
         res.status(500).send('unable to delete user');
     }
 }
+
 
 module.exports={getAllUsers,getSingleUser, createUser, updateUser, deleteUser};
