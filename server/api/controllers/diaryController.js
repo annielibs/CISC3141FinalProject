@@ -1,3 +1,4 @@
+const Entries = require("../../db/models/entries");
 const Diaries = require("../../db/models/diaries");
 
 /*
@@ -26,7 +27,10 @@ const getAllDiaries = async (req, res) => {
 const getDiaryByName = async (req, res) => {
     try {
         const diaryName = req.params.diaryName;
-        const diary = await Diaries.findOne({ where: { diary_name: diaryName } });
+        const diary = await Diaries.findOne({ 
+          include: Entries,
+          where: { diary_name: diaryName } 
+        });
 
         res.status(200).send(diary);
         console.log(`Successfully retrieved diary with name "${diaryName}"`);
@@ -40,9 +44,11 @@ const getDiaryByName = async (req, res) => {
 const createSingleDiary = async (req, res) => {
     try {
         const diaryName = req.body.diary_name; // get diary name from client request
+        const userId = req.body.UserId;
         await Diaries.create({
             diary_name: diaryName,
             diary_creation_date: new Date().toISOString().slice(0, 10),  // YYYY-MM-DD
+            UserId: userId
         });
 
         res.status(200).send(`Created new diary: "${diaryName}"`);
