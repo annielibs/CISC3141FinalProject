@@ -13,6 +13,10 @@ const Entries = db.define('entries', {
     entry_img:{
         type: Sequelize.STRING,
         defaultValue:'.../assets/camera.png'
+    },
+    private:{
+        type: Sequelize.BOOLEAN,
+        defaultValue: true
     }
 });
 

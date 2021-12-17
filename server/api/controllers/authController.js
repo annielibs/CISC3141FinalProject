@@ -5,7 +5,7 @@ const {secret} = require('../../config/auth.config');
 
 const auth = async(req, res) =>{
     try{
-        const user = await Users.findOne({where: {email: req.params.email}})
+        const user = await Users.findOne({where: {email: req.body.email}})
         if(user.correctPassword(req.body.password)){
             //res.status(200).send('correct password!');
             jwt.sign({user}, secret, (err, token)=>{
