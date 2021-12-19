@@ -21,8 +21,8 @@ class DiaryService {
     return api.patch(`/diaries/update-diary/:${diaryName}`);
   }
 
-  deleteDiary(diaryName) {
-    return api.delete(`/diaries/delete-diary/:${diaryName}`);
+  deleteDiary(diaryId) {
+    return api.delete(`/diaries/delete-diary/:${diaryId}`);
   }
 }
 

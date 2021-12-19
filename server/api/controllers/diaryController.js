@@ -75,15 +75,15 @@ const updateSingleDiary = async (req, res) => {
 
 // DELETE single diary
 const deleteSingleDiary = async (req, res) => {
-  const diaryName = req.params.diaryName;
+  const diaryId = req.params.diaryId;
   try {
-    await Diaries.destroy({ where: { diary_name: diaryName } });
+    await Diaries.destroy({ where: { id: diaryId } });
 
-    res.status(200).send(`Deleted diary: "${diaryName}"`);
-    console.log(`Successfully deleted "${diaryName}" from database`);
+    res.status(200).send(`Deleted diary`);
+    console.log(`Successfully deleted from database`);
   } catch (err) {
-    res.status(500).send(`Unable to delete diary: "${diaryName}"`);
-    console.log(`Unsuccessful operation to DELETE "${diaryName}" from database`, err);
+    res.status(500).send(`Unable to delete diary`);
+    console.log(`Unsuccessful operation to DELETE`, err);
   }
 };
 

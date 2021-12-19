@@ -14,6 +14,6 @@ diaryRouter.get("/", getAllDiaries);
 diaryRouter.get("/:diaryName", getDiaryByName);
 diaryRouter.post("/create-diary", createSingleDiary);
 diaryRouter.patch("/update-diary/:diaryName", updateSingleDiary);
-diaryRouter.delete("/delete-diary/:diaryName", deleteSingleDiary);
+diaryRouter.delete("/delete-diary/:diaryId", deleteSingleDiary);
 
 module.exports = diaryRouter;

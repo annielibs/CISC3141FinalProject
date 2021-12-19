@@ -26,10 +26,10 @@ const EditDiaryButton = ({ editHandler }) => {
   );
 };
 
-const DeleteDiaryButton = ({ btnClassName, deleteHandler }) => {
+const DeleteDiaryButton = ({ btnClassName, deleteHandler, diaryId }) => {
   return (
     <>
-      <button className={btnClassName} onClick={deleteHandler} type="button">
+      <button className={btnClassName} onClick={() => deleteHandler(diaryId)} type="button">
         X
       </button>
     </>
@@ -48,7 +48,11 @@ const Diary = ({ diary, canEdit, deleteBtnHandler }) => {
 
   return (
     <div className="diary-card-container">
-      <DeleteDiaryButton btnClassName={btnClassName} deleteHandler={deleteDiary} />
+      <DeleteDiaryButton
+        btnClassName={btnClassName}
+        deleteHandler={deleteDiary}
+        diaryId={diaryId}
+      />
       <div className="diary-image-container">
         <img src={diaryImg} alt="diary"></img>
       </div>
@@ -70,8 +74,9 @@ const DiaryList = ({ diaries, canEdit, deleteHandler }) => {
   return (
     <div className="diary-card-list">
       {diaries.map((diary) => {
-        console.log("reloading List");
-        return <Diary diary={diary} canEdit={canEdit} deleteBtnHandler={deleteHandler} />;
+        return (
+          <Diary key={diary.id} diary={diary} canEdit={canEdit} deleteBtnHandler={deleteHandler} />
+        );
       })}
     </div>
   );
@@ -94,8 +99,8 @@ const DiaryPage = () => {
     console.log("show delete buttons");
   };
 
-  const deleteButtonHandler = (diaryName) => {
-    DiaryService.deleteDiary(diaryName)
+  const deleteButtonHandler = (diaryId) => {
+    DiaryService.deleteDiary(diaryId)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
   };
