@@ -1,12 +1,19 @@
-import React, { useState } from "react";
-import DiaryService from "../../service/diaryService";
+import React from "react";
 import "../../styles/DiaryStyles/DiaryModal.css";
 
-const DiaryForm = ({ name, nameHandler, description, descriptionHandler, formHandler }) => {
+const DiaryForm = ({
+  name,
+  nameHandler,
+  description,
+  descriptionHandler,
+  formHandler,
+  btnText,
+  headerText,
+}) => {
   return (
     <div className="modal-form-container">
       <form className="modal-form" onSubmit={formHandler}>
-        <h2 className="diary-modal-header">Create A Diary</h2>
+        <h2 className="diary-modal-header">{headerText}</h2>
         <label className="diary-name-label">
           Diary Name:
           <input
@@ -28,7 +35,7 @@ const DiaryForm = ({ name, nameHandler, description, descriptionHandler, formHan
           />
         </label>
         <button className="diary-modal-btn" type="submit">
-          Save Diary
+          {btnText}
         </button>
       </form>
     </div>
@@ -36,29 +43,16 @@ const DiaryForm = ({ name, nameHandler, description, descriptionHandler, formHan
 };
 
 // specialized modal component to handle New Diary creation form
-const DiaryModal = ({ modalClassName }) => {
-  const [diaryName, setDiaryName] = useState("");
-  const [diaryDescription, setDiaryDescription] = useState("");
-
-  const nameHandler = (event) => {
-    setDiaryName(event.target.value);
-  };
-
-  const descriptionHandler = (event) => {
-    setDiaryDescription(event.target.value);
-  };
-
-  const formSubmitHandler = (event) => {
-    const newDiary = {
-      diary_name: diaryName,
-    };
-
-    // POST new diary
-    DiaryService.createDiary(newDiary)
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
-  };
-
+const DiaryModal = ({
+  modalClassName,
+  formHandler,
+  diaryName,
+  nameHandler,
+  diaryDescription,
+  descriptionHandler,
+  buttonText,
+  headerText,
+}) => {
   return (
     <div className={modalClassName}>
       <DiaryForm
@@ -66,7 +60,9 @@ const DiaryModal = ({ modalClassName }) => {
         nameHandler={nameHandler}
         description={diaryDescription}
         descriptionHandler={descriptionHandler}
-        formHandler={formSubmitHandler}
+        formHandler={formHandler}
+        btnText={buttonText}
+        headerText={headerText}
       />
     </div>
   );

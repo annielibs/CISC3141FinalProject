@@ -41,12 +41,12 @@ const getDiaryByName = async (req, res) => {
 
 // CREATE single new diary
 const createSingleDiary = async (req, res) => {
-  const diaryName = req.body.diary_name; // get diary name from client request
+  const newDiary = req.body.diary;
   const userId = req.body.UserId;
   try {
     await Diaries.create({
-      diary_name: diaryName,
-      diary_creation_date: new Date().toISOString().slice(0, 10), // YYYY-MM-DD
+      diary_name: newDiary.diary_name,
+      diary_description: newDiary.diary_description,
       UserId: userId,
     });
 
@@ -62,8 +62,13 @@ const createSingleDiary = async (req, res) => {
 const updateSingleDiary = async (req, res) => {
   const diaryName = req.params.diaryName;
   const newDiaryName = req.body.newDiaryName;
+  const newDescription = req.body.newDescription;
+
   try {
-    await Diaries.update({ diary_name: newDiaryName }, { where: { diary_name: diaryName } });
+    await Diaries.update(
+      { diary_name: newDiaryName, diary_description: newDescription },
+      { where: { diary_name: diaryName } }
+    );
 
     res.status(200).send(`Updated diary: "${diaryName}" to "${newDiaryName}"`);
     console.log(`Successfully updated "${diaryName}" to "${newDiaryName}" in database`);

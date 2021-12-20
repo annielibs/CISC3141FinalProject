@@ -4,6 +4,7 @@ import DiaryService from "../../service/diaryService.js";
 import DiaryModal from "./diaryModal.js";
 import diaryImg from "../../assets/diary.jpg";
 import "../../styles/DiaryStyles/DiaryPage.css";
+import editLogo from "../../assets/Edit-icon.png";
 
 // Button component opens Modal Form to create new Diary
 const CreateDiaryButton = ({ createBtnHandler }) => {
@@ -36,21 +37,35 @@ const DeleteDiaryButton = ({ btnClassName, deleteHandler, diaryName }) => {
   );
 };
 
+const UpdateDiaryButton = ({ btnClassName, updateHandler, diaryName }) => {
+  return (
+    <>
+      <button className={btnClassName} onClick={() => updateHandler(diaryName)} type="button">
+        <img src={editLogo} alt="edit-icon"></img>
+      </button>
+    </>
+  );
+};
+
 // Diary card component
-const Diary = ({ diary, canEdit, deleteBtnHandler }) => {
+const Diary = ({ diary, canEdit, deleteBtnHandler, updateHandler }) => {
   const diaryId = diary.id;
   const diaryName = diary.diary_name;
+  const description = diary.diary_description;
 
-  const btnClassName = canEdit ? "delete-diary-btn" : "delete-diary-btn-hidden";
-  const deleteDiary = () => {
-    deleteBtnHandler(diaryName);
-  };
+  const deleteBtnClassName = canEdit ? "delete-diary-btn" : "delete-diary-btn-hidden";
+  const updateBtnClassName = canEdit ? "update-diary-btn" : "update-diary-btn-hidden";
 
   return (
     <div className="diary-card-container">
       <DeleteDiaryButton
-        btnClassName={btnClassName}
-        deleteHandler={deleteDiary}
+        btnClassName={deleteBtnClassName}
+        deleteHandler={deleteBtnHandler}
+        diaryName={diaryName}
+      />
+      <UpdateDiaryButton
+        btnClassName={updateBtnClassName}
+        updateHandler={updateHandler}
         diaryName={diaryName}
       />
       <div className="diary-image-container">
@@ -60,7 +75,7 @@ const Diary = ({ diary, canEdit, deleteBtnHandler }) => {
         <h3>{diaryName}</h3>
       </div>
       <div className="diary-description">
-        <p>This is the decription of the diary</p>
+        <p>{description}</p>
       </div>
       <Link to={`/${diaryId}/entries-page`} className="diary-card-button">
         View Entries
@@ -70,12 +85,18 @@ const Diary = ({ diary, canEdit, deleteBtnHandler }) => {
 };
 
 // Diary card grouping component
-const DiaryList = ({ diaries, canEdit, deleteHandler }) => {
+const DiaryList = ({ diaries, canEdit, deleteHandler, updateHandler }) => {
   return (
     <div className="diary-card-list">
       {diaries.map((diary) => {
         return (
-          <Diary key={diary.id} diary={diary} canEdit={canEdit} deleteBtnHandler={deleteHandler} />
+          <Diary
+            key={diary.id}
+            diary={diary}
+            canEdit={canEdit}
+            deleteBtnHandler={deleteHandler}
+            updateHandler={updateHandler}
+          />
         );
       })}
     </div>
@@ -86,24 +107,10 @@ const DiaryList = ({ diaries, canEdit, deleteHandler }) => {
 const DiaryPage = () => {
   const [diaries, setDiaries] = useState([]);
   const [isVisibleModal, setVisibleModal] = useState(false);
+  const [update, setUpdate] = useState(false);
   const [isEditable, setEditable] = useState(false);
-
-  // event handler for "Create a Diary" button
-  const createButtonHandler = (event) => {
-    setVisibleModal(true);
-    console.log("popup");
-  };
-
-  const editButtonHandler = (event) => {
-    setEditable(!isEditable);
-    console.log("show delete buttons");
-  };
-
-  const deleteButtonHandler = (diaryName) => {
-    DiaryService.deleteDiary(diaryName)
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
-  };
+  const [newDiaryName, setNewDiaryName] = useState("");
+  const [diaryDescription, setDiaryDescription] = useState("");
 
   // fetch all diaries from database - no page reload
   useEffect(() => {
@@ -115,6 +122,53 @@ const DiaryPage = () => {
       .catch((err) => console.log(err));
   }, []);
 
+  // modal name and description input
+  const nameHandler = (event) => {
+    setNewDiaryName(event.target.value);
+  };
+
+  const descriptionHandler = (event) => {
+    setDiaryDescription(event.target.value);
+  };
+
+  // event handler for "Create a Diary" button
+  const createButtonHandler = (event) => {
+    setVisibleModal(true);
+  };
+
+  const updateButtonHandler = (event) => {
+    setUpdate(true);
+  };
+
+  const editButtonHandler = (event) => {
+    setEditable(!isEditable);
+  };
+
+  // api service calls
+  const deleteHandler = (diaryName) => {
+    DiaryService.deleteDiary(diaryName)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  };
+
+  const updateHandler = (diaryName) => {
+    DiaryService.updateDiary(diaryName, newDiaryName, diaryDescription)
+      .then((res) => console.log(res))
+      .then((err) => console.log(err));
+  };
+
+  const formSubmitHandler = (event) => {
+    const newDiary = {
+      diary_name: newDiaryName,
+      diary_description: diaryDescription,
+    };
+
+    // POST new diary
+    DiaryService.createDiary(newDiary)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  };
+
   return (
     <div className="diary-hub">
       <h1 className="diary-hub-heading">Diaries</h1>
@@ -122,11 +176,57 @@ const DiaryPage = () => {
         <CreateDiaryButton createBtnHandler={createButtonHandler} />
         <EditDiaryButton editHandler={editButtonHandler} />
       </div>
-      <DiaryList diaries={diaries} canEdit={isEditable} deleteHandler={deleteButtonHandler} />
+      <DiaryList
+        diaries={diaries}
+        canEdit={isEditable}
+        deleteHandler={deleteHandler}
+        updateHandler={updateButtonHandler}
+      />
       {isVisibleModal ? (
-        <DiaryModal modalClassName={"modal-display"} />
+        <DiaryModal
+          modalClassName={"modal-display"}
+          formHandler={formSubmitHandler}
+          diaryName={newDiaryName}
+          nameHandler={nameHandler}
+          diaryDescription={diaryDescription}
+          descriptionHandler={descriptionHandler}
+          buttonText={"Save Diary"}
+          headerText={"Create New Diary"}
+        />
       ) : (
-        <DiaryModal modalClassName={"modal-display-none"} />
+        <DiaryModal
+          modalClassName={"modal-display-none"}
+          formHandler={formSubmitHandler}
+          diaryName={newDiaryName}
+          nameHandler={nameHandler}
+          diaryDescription={diaryDescription}
+          descriptionHandler={descriptionHandler}
+          buttonText={"Save Diary"}
+          headerText={"Create New Diary"}
+        />
+      )}
+      {update ? (
+        <DiaryModal
+          modalClassName={"modal-display"}
+          formHandler={updateHandler}
+          diaryName={newDiaryName}
+          nameHandler={nameHandler}
+          diaryDescription={diaryDescription}
+          descriptionHandler={descriptionHandler}
+          buttonText={"Save Updates"}
+          headerText={"Update Diary"}
+        />
+      ) : (
+        <DiaryModal
+          modalClassName={"modal-display-none"}
+          formHandler={updateHandler}
+          diaryName={newDiaryName}
+          nameHandler={nameHandler}
+          diaryDescription={diaryDescription}
+          descriptionHandler={descriptionHandler}
+          buttonText={"Save Updates"}
+          headerText={"Update Diary"}
+        />
       )}
     </div>
   );

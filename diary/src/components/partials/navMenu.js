@@ -13,10 +13,6 @@ const NavMenu = () => {
       <Link to={"Diaries"} className="menu-item">
         Diaries
       </Link>
-
-      <Link to={"Entries"} className="menu-item">
-        Entries
-      </Link>
     </Nav>
   );
 };
