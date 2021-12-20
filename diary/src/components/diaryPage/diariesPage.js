@@ -109,6 +109,7 @@ const DiaryPage = () => {
   const [isVisibleModal, setVisibleModal] = useState(false);
   const [update, setUpdate] = useState(false);
   const [isEditable, setEditable] = useState(false);
+  const [selectedDiary, setSelectedDiary] = useState("");
   const [newDiaryName, setNewDiaryName] = useState("");
   const [diaryDescription, setDiaryDescription] = useState("");
 
@@ -120,7 +121,7 @@ const DiaryPage = () => {
         setDiaries(diaryList.data);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [diaries]);
 
   // modal name and description input
   const nameHandler = (event) => {
@@ -136,7 +137,8 @@ const DiaryPage = () => {
     setVisibleModal(true);
   };
 
-  const updateButtonHandler = (event) => {
+  const updateButtonHandler = (diaryName) => {
+    setSelectedDiary(diaryName);
     setUpdate(true);
   };
 
@@ -151,13 +153,22 @@ const DiaryPage = () => {
       .catch((err) => console.log(err));
   };
 
-  const updateHandler = (diaryName) => {
-    DiaryService.updateDiary(diaryName, newDiaryName, diaryDescription)
+  const updateFormHandler = (event) => {
+    event.preventDefault();
+    const updatedDiary = { diary_name: newDiaryName, diary_description: diaryDescription };
+
+    DiaryService.updateDiary(selectedDiary, updatedDiary)
       .then((res) => console.log(res))
       .then((err) => console.log(err));
+
+    setDiaries((diaries) => [...diaries]);
+    setNewDiaryName("");
+    setDiaryDescription("");
+    setUpdate(false);
   };
 
   const formSubmitHandler = (event) => {
+    event.preventDefault();
     const newDiary = {
       diary_name: newDiaryName,
       diary_description: diaryDescription,
@@ -167,6 +178,11 @@ const DiaryPage = () => {
     DiaryService.createDiary(newDiary)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
+
+    setDiaries((diaries) => [...diaries, newDiary]);
+    setNewDiaryName("");
+    setDiaryDescription("");
+    setVisibleModal(false);
   };
 
   return (
@@ -208,7 +224,7 @@ const DiaryPage = () => {
       {update ? (
         <DiaryModal
           modalClassName={"modal-display"}
-          formHandler={updateHandler}
+          formHandler={updateFormHandler}
           diaryName={newDiaryName}
           nameHandler={nameHandler}
           diaryDescription={diaryDescription}
@@ -219,7 +235,7 @@ const DiaryPage = () => {
       ) : (
         <DiaryModal
           modalClassName={"modal-display-none"}
-          formHandler={updateHandler}
+          formHandler={updateFormHandler}
           diaryName={newDiaryName}
           nameHandler={nameHandler}
           diaryDescription={diaryDescription}

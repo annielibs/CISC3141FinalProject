@@ -41,12 +41,13 @@ const getDiaryByName = async (req, res) => {
 
 // CREATE single new diary
 const createSingleDiary = async (req, res) => {
-  const newDiary = req.body.diary;
+  const diaryName = req.body.diary_name;
+  const diaryDescription = req.body.diary_description;
   const userId = req.body.UserId;
   try {
     await Diaries.create({
-      diary_name: newDiary.diary_name,
-      diary_description: newDiary.diary_description,
+      diary_name: diaryName,
+      diary_description: diaryDescription,
       UserId: userId,
     });
 
@@ -61,8 +62,8 @@ const createSingleDiary = async (req, res) => {
 // UPDATE diary information
 const updateSingleDiary = async (req, res) => {
   const diaryName = req.params.diaryName;
-  const newDiaryName = req.body.newDiaryName;
-  const newDescription = req.body.newDescription;
+  const newDiaryName = req.body.diary_name;
+  const newDescription = req.body.diary_description;
 
   try {
     await Diaries.update(
