@@ -117,11 +117,10 @@ const DiaryPage = () => {
   useEffect(() => {
     DiaryService.readAllDiaries()
       .then((diaryList) => {
-        console.log("useeffect" + diaryList.data);
         setDiaries(diaryList.data);
       })
       .catch((err) => console.log(err));
-  }, [diaries]);
+  }, []);
 
   // modal name and description input
   const nameHandler = (event) => {
@@ -161,7 +160,6 @@ const DiaryPage = () => {
       .then((res) => console.log(res))
       .then((err) => console.log(err));
 
-    setDiaries((diaries) => [...diaries]);
     setNewDiaryName("");
     setDiaryDescription("");
     setUpdate(false);
@@ -179,7 +177,6 @@ const DiaryPage = () => {
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
 
-    setDiaries((diaries) => [...diaries, newDiary]);
     setNewDiaryName("");
     setDiaryDescription("");
     setVisibleModal(false);
