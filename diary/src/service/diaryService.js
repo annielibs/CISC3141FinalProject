@@ -14,15 +14,15 @@ class DiaryService {
   }
 
   readOneDiary(diaryName) {
-    return api.get(`/diaries/:${diaryName}`);
+    return api.get(`/diaries/${diaryName}`);
   }
 
   updateDiary(diaryName) {
-    return api.patch(`/diaries/update-diary/:${diaryName}`);
+    return api.patch(`/diaries/update-diary/${diaryName}`);
   }
 
-  deleteDiary(diaryId) {
-    return api.delete(`/diaries/delete-diary/:${diaryId}`);
+  deleteDiary(diaryName) {
+    return api.delete(`/diaries/delete-diary/${diaryName}`);
   }
 }
 

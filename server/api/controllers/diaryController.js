@@ -75,9 +75,9 @@ const updateSingleDiary = async (req, res) => {
 
 // DELETE single diary
 const deleteSingleDiary = async (req, res) => {
-  const diaryId = req.params.diaryId;
+  const diaryName = req.params.diaryName;
   try {
-    await Diaries.destroy({ where: { id: diaryId } });
+    await Diaries.destroy({ where: { diary_name: diaryName } });
 
     res.status(200).send(`Deleted diary`);
     console.log(`Successfully deleted from database`);
